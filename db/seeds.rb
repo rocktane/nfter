@@ -1,9 +1,26 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
+
+puts 'Cleaning database...'
+Nft.destroy_all
+User.destroy_all
+
+puts 'Creating users...'
+10.times do |_user|
+  username = Faker::Internet.username
+  email = Faker::Internet.email(domain: 'gmail.com')
+  password = Faker::Internet.password
+  User.create!(username: username, email: email, password: password)
+end
+
+puts 'Creating NFT...'
+
+10.times do |_nft|
+  name = Faker::Hipster.words(number: 2)
+  description = Faker::Lorem.paragraphs(number: 1, supplemental: true)
+  availability = Faker::Boolean.boolean
+  price = Faker::Number.between(from: 150, to: 300)
+  user_id = User.all.sample
+  Nft.create!(name: name.join(' '), description: description[0], availability: availability, price: price, user: user_id)
+end
+
+puts 'Finished!'
