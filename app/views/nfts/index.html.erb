@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>NFTS</h1>
+
+  <ul class="list-group">
+    <% @nfts.where(availability: true).sample(6).each do |nft| %>
+      <li class="list-group-item mt-3">Name: <%= nft.name %></li>
+      <li class="list-group-item">Description: <%= nft.description %></li>
+      <li class="list-group-item">Price: <%= nft.price %></li>
+      <li class="list-group-item">Availability: <%= nft.availability %></li>
+      <li class="list-group-item">ID: <%= nft.user_id %></li>
+    <% end %>
+  </ul>
+
+<ul class="list-group">
+  <% @nfts.each do |nft| %>
+    <%= link_to nft_path(nft) do %>
+      <li class="list-group-item mt-3">Name: <%= nft.name %></li>
+    <% end %>
+      <li class="list-group-item">Description: <%= nft.description %></li>
+      <li class="list-group-item">Price: <%= nft.price %></li>
+
+      <li class="list-group-item">Availability: <%= nft.availability %></li>
+      <li class="list-group-item">ID: <%= nft.user_id %></li>
+  <% end %>
+</ul>
+</div>
