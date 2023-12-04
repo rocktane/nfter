@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_141046) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_143718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_141046) do
     t.datetime "end_date"
     t.bigint "nft_id", null: false
     t.bigint "user_id", null: false
-    t.string "state", default: "Pending"
+    t.string "state", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nft_id"], name: "index_transactions_on_nft_id"
