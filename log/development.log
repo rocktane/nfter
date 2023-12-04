@@ -5234,3 +5234,663 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1471514614471690005)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 >>>>>>> master
+Started GET "/" for ::1 at 2023-12-04 17:01:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231204143718_create_transactions.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-12-04 17:01:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231204143718_create_transactions.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-12-04 17:01:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231204143718_create_transactions.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-12-04 17:01:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231204143718_create_transactions.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-12-04 17:01:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20231204143718_create_transactions.rb
+
+
+):
+  
+activerecord (7.1.2) lib/active_record/migration.rb:754:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1471514614471690005)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateTransactions (20231204143718)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "begin_date" timestamp(6), "end_date" timestamp(6), "nft_id" bigint NOT NULL, "user_id" bigint NOT NULL, "state" character varying DEFAULT 'pending', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1142151327"
+FOREIGN KEY ("nft_id")
+  REFERENCES "nfts" ("id")
+, CONSTRAINT "fk_rails_77364e6416"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_nft_id" ON "transactions" ("nft_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_user_id" ON "transactions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231204143718') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1471514614471690005)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-12-04 17:01:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 38.5ms | Allocations: 19075)
+Started GET "/" for ::1 at 2023-12-04 17:01:29 +0100
+  Rendered layout layouts/application.html.erb (Duration: 3952.6ms | Allocations: 238036)
+Completed 200 OK in 3959ms (Views: 3931.3ms | ActiveRecord: 22.7ms | Allocations: 242830)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 6472)
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 34921)
+Completed 200 OK in 88ms (Views: 79.0ms | ActiveRecord: 6.8ms | Allocations: 37379)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Processing by NftsController#index as HTML
+Processing by NftsController#index as HTML
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4761)
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (2.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (1.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 21892)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.9ms | Allocations: 23128)
+
+
+  [1m[36mNft Load (1.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 22550)
+  [1m[36mNft Load (2.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 27642)
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 27248)
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 50063)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 10.6ms | Allocations: 51118)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 47218)
+Completed 200 OK in 38ms (Views: 22.8ms | ActiveRecord: 14.2ms | Allocations: 47797)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 54893)
+Completed 200 OK in 44ms (Views: 31.7ms | ActiveRecord: 10.5ms | Allocations: 57371)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (1.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1902)
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 12203)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 1.9ms | Allocations: 12463)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.8ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2710)
+  [1m[36mNft Load (1.8ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 7002)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 22582)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 2.6ms | Allocations: 22876)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 22798)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.7ms | Allocations: 23064)
+
+
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2529)
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2363)
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2653)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 28036)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 1.4ms | Allocations: 28335)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 17844)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 18451)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:01:30 +0100
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 30618)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.5ms | Allocations: 30994)
+
+
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+Processing by NftsController#index as HTML
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2535)
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (2.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 7793)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 16316)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.9ms | Allocations: 16587)
+
+
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 23231)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 3.2ms | Allocations: 24462)
+
+
+  [1m[36mNft Load (0.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4881)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 14016)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.1ms | Allocations: 14619)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:04:12 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (3.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 64.0ms | Allocations: 6213)
+  Rendered layout layouts/application.html.erb (Duration: 89.9ms | Allocations: 33495)
+Completed 200 OK in 95ms (Views: 53.0ms | ActiveRecord: 39.2ms | Allocations: 35953)
+
+
+Started GET "/nfts/111" for ::1 at 2023-12-04 17:04:24 +0100
+Processing by NftsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/show.html.erb within layouts/application
+  Rendered nfts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 180)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 9372)
+Completed 200 OK in 36ms (Views: 18.4ms | ActiveRecord: 0.4ms | Allocations: 11327)
+
+
+Started GET "/nfts/111" for ::1 at 2023-12-04 17:05:24 +0100
+Processing by NftsController#show as HTML
+  Parameters: {"id"=>"111"}
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."id" = $1 LIMIT $2[0m  [["id", 111], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/show.html.erb within layouts/application
+  Rendered nfts/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 224)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 27378)
+Completed 200 OK in 38ms (Views: 21.2ms | ActiveRecord: 10.8ms | Allocations: 34579)
+
+
+Started GET "/96/new" for ::1 at 2023-12-04 17:15:15 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/96/new"):
+  
+Started GET "/96/" for ::1 at 2023-12-04 17:17:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/96"):
+  
+Started GET "/" for ::1 at 2023-12-04 17:17:46 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (2.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 60.2ms | Allocations: 8829)
+  Rendered layout layouts/application.html.erb (Duration: 87.1ms | Allocations: 36148)
+Completed 200 OK in 93ms (Views: 61.2ms | ActiveRecord: 27.3ms | Allocations: 38568)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:02 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (2.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 34.8ms | Allocations: 6046)
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | Allocations: 33058)
+Completed 200 OK in 67ms (Views: 40.0ms | ActiveRecord: 23.7ms | Allocations: 35510)
+
+
+Started GET "/new" for ::1 at 2023-12-04 17:22:14 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/nfts/new" for ::1 at 2023-12-04 17:22:49 +0100
+Processing by NftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 1.1ms | Allocations: 1358)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1601)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1692)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2094)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= simple_form_for @nft do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :price %>
+<%= f.input :availability %>
+<%= f.button :submit %>
+
+):
+1:    <%= simple_form_for @nft do |f| %>
+2:    <%= f.input :name %>
+3:    <%= f.input :description %>
+4:    <%= f.input :price %>
+5:    <%= f.input :availability %>
+6:    <%= f.button :submit %>
+  
+app/views/nfts/_form.html.erb:9: syntax error, unexpected end-of-input, expecting `end'
+app/views/nfts/new.html.erb:4
+Started GET "/nfts/new" for ::1 at 2023-12-04 17:23:10 +0100
+Processing by NftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 66.1ms | Allocations: 15996)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 66.9ms | Allocations: 16266)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 42981)
+Completed 200 OK in 127ms (Views: 88.0ms | ActiveRecord: 26.5ms | Allocations: 48931)
+
+
+Started GET "/nfts/new" for ::1 at 2023-12-04 17:26:52 +0100
+Processing by NftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 3.3ms | Allocations: 3447)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3712)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 30284)
+Completed 200 OK in 64ms (Views: 34.4ms | ActiveRecord: 17.6ms | Allocations: 36202)
+
+
+  [1m[36mNft Load (1.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" ORDER BY "nfts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/120/edit" for ::1 at 2023-12-04 17:27:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/120/edit"):
+  
+Started GET "/nfts/120/edit" for ::1 at 2023-12-04 17:28:15 +0100
+Processing by NftsController#edit as HTML
+  Parameters: {"id"=>"120"}
+  [1m[36mNft Load (2.9ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."id" = $1 LIMIT $2[0m  [["id", 120], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/edit.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 5.0ms | Allocations: 2923)
+  Rendered nfts/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3107)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 11899)
+Completed 200 OK in 61ms (Views: 19.0ms | ActiveRecord: 2.9ms | Allocations: 13626)
+
+
