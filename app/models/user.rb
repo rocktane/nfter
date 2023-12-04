@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :nfts
-  belongs_to :transactions
+  has_many :transactions
+  has_many :nfts, through: :transactions
 
-  # validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :username, uniqueness: true
 end
