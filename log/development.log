@@ -5234,3 +5234,701 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1471514614471690005)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 >>>>>>> master
+  [1m[36mUser Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1471514614471690005)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateTransactions (20231204143718)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "begin_date" timestamp(6), "end_date" timestamp(6), "nft_id" bigint NOT NULL, "user_id" bigint NOT NULL, "state" character varying DEFAULT 'pending', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1142151327"
+FOREIGN KEY ("nft_id")
+  REFERENCES "nfts" ("id")
+, CONSTRAINT "fk_rails_77364e6416"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_nft_id" ON "transactions" ("nft_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_user_id" ON "transactions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231204143718') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1471514614471690005)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mNft Load (3.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "burton_dooley@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "leland_rodriguez"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "burton_dooley@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:04.941284"], ["updated_at", "2023-12-04 16:08:04.941284"], ["username", "leland_rodriguez"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "francesco@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "deshawn_robel"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "francesco@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:05.210167"], ["updated_at", "2023-12-04 16:08:05.210167"], ["username", "deshawn_robel"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "marcelino_rodriguez@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "arlette"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "marcelino_rodriguez@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:05.479384"], ["updated_at", "2023-12-04 16:08:05.479384"], ["username", "arlette"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "malcom_schimmel@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "moses"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "malcom_schimmel@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:05.750409"], ["updated_at", "2023-12-04 16:08:05.750409"], ["username", "moses"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cristie.hills@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stacee_boyer"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "cristie.hills@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:06.018992"], ["updated_at", "2023-12-04 16:08:06.018992"], ["username", "stacee_boyer"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kathi_wyman@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "carola"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "kathi_wyman@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:06.294383"], ["updated_at", "2023-12-04 16:08:06.294383"], ["username", "carola"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (8.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "nickolas@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "shirlee.lowe"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "nickolas@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:06.574231"], ["updated_at", "2023-12-04 16:08:06.574231"], ["username", "shirlee.lowe"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hobert@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ammie_orn"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "hobert@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:06.841929"], ["updated_at", "2023-12-04 16:08:06.841929"], ["username", "ammie_orn"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "omega.mills@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "anita"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "omega.mills@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:07.110952"], ["updated_at", "2023-12-04 16:08:07.110952"], ["username", "anita"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "loreen@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "agatha"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "loreen@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-12-04 16:08:07.380798"], ["updated_at", "2023-12-04 16:08:07.380798"], ["username", "agatha"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "brunch flannel"], ["description", "Corona quae aperte. Cariosus somnus video. Verus admitto patrocinor."], ["LIMIT", 1]]
+  [1m[36mNft Create (1.8ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "brunch flannel"], ["price", 299], ["availability", false], ["description", "Corona quae aperte. Cariosus somnus video. Verus admitto patrocinor."], ["user_id", 6], ["created_at", "2023-12-04 16:08:07.402020"], ["updated_at", "2023-12-04 16:08:07.402020"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "austin VHS"], ["description", "Somniculosus adsidue quia. Trans civitas commodi. Defetiscor autem vivo."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.2ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "austin VHS"], ["price", 212], ["availability", true], ["description", "Somniculosus adsidue quia. Trans civitas commodi. Defetiscor autem vivo."], ["user_id", 7], ["created_at", "2023-12-04 16:08:07.410430"], ["updated_at", "2023-12-04 16:08:07.410430"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "kombucha ethical"], ["description", "Soleo culpo ipsam. Admoveo tero sint. Versus ea ratione."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "kombucha ethical"], ["price", 208], ["availability", true], ["description", "Soleo culpo ipsam. Admoveo tero sint. Versus ea ratione."], ["user_id", 10], ["created_at", "2023-12-04 16:08:07.414673"], ["updated_at", "2023-12-04 16:08:07.414673"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "pabst chillwave"], ["description", "Una absorbeo excepturi. Subiungo caelum iste. Et ipsa aetas."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.4ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "pabst chillwave"], ["price", 238], ["availability", true], ["description", "Una absorbeo excepturi. Subiungo caelum iste. Et ipsa aetas."], ["user_id", 8], ["created_at", "2023-12-04 16:08:07.425036"], ["updated_at", "2023-12-04 16:08:07.425036"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "ramps cornhole"], ["description", "Peior celer video. Acies theologus brevis. Sed strues odio."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "ramps cornhole"], ["price", 206], ["availability", true], ["description", "Peior celer video. Acies theologus brevis. Sed strues odio."], ["user_id", 10], ["created_at", "2023-12-04 16:08:07.428236"], ["updated_at", "2023-12-04 16:08:07.428236"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "narwhal artisan"], ["description", "Certus cervus concedo. Tandem aeger argumentum. Culpo despirmatio umerus."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.4ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "narwhal artisan"], ["price", 204], ["availability", false], ["description", "Certus cervus concedo. Tandem aeger argumentum. Culpo despirmatio umerus."], ["user_id", 8], ["created_at", "2023-12-04 16:08:07.432501"], ["updated_at", "2023-12-04 16:08:07.432501"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "vinyl hashtag"], ["description", "Omnis caritas voluntarius. Speculum blandior nobis. Torrens ceno cohors."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "vinyl hashtag"], ["price", 159], ["availability", true], ["description", "Omnis caritas voluntarius. Speculum blandior nobis. Torrens ceno cohors."], ["user_id", 9], ["created_at", "2023-12-04 16:08:07.435770"], ["updated_at", "2023-12-04 16:08:07.435770"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "venmo hammock"], ["description", "Demitto theatrum aer. Curia est volo. Et thalassinus corrigo."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "venmo hammock"], ["price", 197], ["availability", false], ["description", "Demitto theatrum aer. Curia est volo. Et thalassinus corrigo."], ["user_id", 3], ["created_at", "2023-12-04 16:08:07.439563"], ["updated_at", "2023-12-04 16:08:07.439563"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "wolf pitchfork"], ["description", "Curso sui debilito. Minima itaque statim. Vomer magni tot."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "wolf pitchfork"], ["price", 217], ["availability", false], ["description", "Curso sui debilito. Minima itaque statim. Vomer magni tot."], ["user_id", 3], ["created_at", "2023-12-04 16:08:07.442891"], ["updated_at", "2023-12-04 16:08:07.442891"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNft Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "fingerstache PBR&B"], ["description", "Vulgivagus sulum decumbo. Thymum supplanto claustrum. Demens teneo debitis."], ["LIMIT", 1]]
+  [1m[36mNft Create (0.3ms)[0m  [1m[32mINSERT INTO "nfts" ("name", "price", "availability", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "fingerstache PBR&B"], ["price", 192], ["availability", true], ["description", "Vulgivagus sulum decumbo. Thymum supplanto claustrum. Demens teneo debitis."], ["user_id", 4], ["created_at", "2023-12-04 16:08:07.449061"], ["updated_at", "2023-12-04 16:08:07.449061"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" ORDER BY "nfts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2023-12-04 17:09:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (13.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (6.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 59.3ms | Allocations: 19266)
+Started GET "/" for ::1 at 2023-12-04 17:10:02 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 320.4ms | Allocations: 45986)
+  Rendered layout layouts/application.html.erb (Duration: 6176.6ms | Allocations: 308828)
+Completed 200 OK in 6331ms (Views: 6153.8ms | ActiveRecord: 27.3ms | Allocations: 597146)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 3562.4ms | Allocations: 259567)
+Completed 200 OK in 3563ms (Views: 3532.7ms | ActiveRecord: 30.1ms | Allocations: 259920)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:10:50 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (4.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 6256)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 35226)
+Completed 200 OK in 43ms (Views: 24.0ms | ActiveRecord: 17.3ms | Allocations: 37700)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:01 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (2.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 6046)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 32975)
+Completed 200 OK in 26ms (Views: 17.9ms | ActiveRecord: 6.5ms | Allocations: 35422)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:10 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6054)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 33070)
+Completed 200 OK in 30ms (Views: 23.0ms | ActiveRecord: 5.9ms | Allocations: 35522)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:13 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (1.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1911)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 10958)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 1.6ms | Allocations: 11236)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:14 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1922)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 10979)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.5ms | Allocations: 11248)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:15 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (6.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 1911)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 10961)
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 7.3ms | Allocations: 11221)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:11:15 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1911)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 10964)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 11223)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:12:37 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:17
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6069)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 33088)
+Completed 200 OK in 22ms (Views: 15.8ms | ActiveRecord: 5.0ms | Allocations: 35540)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:13:31 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:17
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 6047)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 32970)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 4.4ms | Allocations: 35421)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:14:26 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 6055)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 32978)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 7.3ms | Allocations: 35425)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:15:23 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (1.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 6040)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 33076)
+Completed 200 OK in 31ms (Views: 15.9ms | ActiveRecord: 13.9ms | Allocations: 35535)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:17:03 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6021)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 32978)
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 5.1ms | Allocations: 35426)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:17:40 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 33035)
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 5.1ms | Allocations: 35486)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:17:52 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 6024)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 32956)
+Completed 200 OK in 24ms (Views: 14.4ms | ActiveRecord: 8.2ms | Allocations: 35407)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:19:37 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 6027)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 33049)
+Completed 200 OK in 27ms (Views: 19.6ms | ActiveRecord: 6.0ms | Allocations: 35497)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:19:49 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 6084)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 33100)
+Completed 200 OK in 21ms (Views: 14.1ms | ActiveRecord: 5.1ms | Allocations: 35555)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:20:24 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 32970)
+Completed 200 OK in 28ms (Views: 16.5ms | ActiveRecord: 9.9ms | Allocations: 35418)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:20:49 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.9ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1881)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 10955)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 1.1ms | Allocations: 11233)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:21:28 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 33038)
+Completed 200 OK in 27ms (Views: 19.9ms | ActiveRecord: 5.7ms | Allocations: 35489)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:21:36 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 33099)
+Completed 200 OK in 26ms (Views: 19.1ms | ActiveRecord: 5.4ms | Allocations: 35551)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:21:49 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 6081)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 33133)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 5.4ms | Allocations: 35588)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:05 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 32997)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 4.4ms | Allocations: 35449)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:19 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (2.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 32963)
+Completed 200 OK in 22ms (Views: 14.5ms | ActiveRecord: 6.6ms | Allocations: 35410)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:27 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 33091)
+Completed 200 OK in 29ms (Views: 18.4ms | ActiveRecord: 8.8ms | Allocations: 35543)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:44 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6088)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 33142)
+Completed 200 OK in 22ms (Views: 14.3ms | ActiveRecord: 5.7ms | Allocations: 35597)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:22:55 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6022)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 33005)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 4.8ms | Allocations: 35457)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:23:00 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 6021)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 32967)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 3.9ms | Allocations: 35414)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:46:14 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.8ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 8797)
+  Rendered layout layouts/application.html.erb (Duration: 3467.5ms | Allocations: 124790)
+Completed 200 OK in 3472ms (Views: 3450.7ms | ActiveRecord: 18.2ms | Allocations: 127273)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:47:05 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 6113)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 33137)
+Completed 200 OK in 29ms (Views: 17.6ms | ActiveRecord: 8.7ms | Allocations: 35592)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:47:19 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6023)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 32976)
+Completed 200 OK in 24ms (Views: 14.8ms | ActiveRecord: 7.5ms | Allocations: 35423)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:47:34 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 6023)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 32955)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 4.5ms | Allocations: 35402)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:50:50 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6044)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 33074)
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 5.4ms | Allocations: 35527)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:51:08 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 6027)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 32953)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 4.9ms | Allocations: 35406)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:51:18 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 6023)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 32958)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 3.8ms | Allocations: 35405)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:51:37 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:6
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:18
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 6044)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 33075)
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 3.8ms | Allocations: 35540)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:07 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 6026)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 33068)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 3.2ms | Allocations: 35520)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:14 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 6025)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 32954)
+Completed 200 OK in 25ms (Views: 14.8ms | ActiveRecord: 8.0ms | Allocations: 35406)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:25 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (2.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 6029)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 33063)
+Completed 200 OK in 35ms (Views: 18.8ms | ActiveRecord: 14.2ms | Allocations: 35511)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:36 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 6082)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 33107)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 7.6ms | Allocations: 35562)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:44 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 6025)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 33053)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 4.0ms | Allocations: 35505)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:53 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 6025)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 33109)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 5.3ms | Allocations: 35561)
+
+
+Started GET "/" for ::1 at 2023-12-04 17:52:55 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.1ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.2ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:20
+  Rendered nfts/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6075)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 33110)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 3.9ms | Allocations: 35563)
+
+
