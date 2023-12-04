@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :transactions
-  has_many :nfts, through: :transactions
+  has_many :nfts
 
   validates :username, presence: true
   validates :username, uniqueness: true
