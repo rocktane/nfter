@@ -3,8 +3,10 @@ class PagesController < ApplicationController
   end
 
   def show
-    if user_signed_in? && current_user.transaction.state == 'pending'
-      @transactions = Transaction.all
+    if user_signed_in?
+    @nfts = Nft.where(user_id: current_user)
+    @transactions = Transaction.all
+    @transactions = Transaction.where(nft_id: current_user)
     end
   end
 
