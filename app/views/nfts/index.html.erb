@@ -5,18 +5,19 @@
 
     <div class="row">
       <% @nfts.where(availability: true).sample(3).each do |nft| %>
-        <div class="nft d-flex flex-column col-3">
-          <div class="image">
-            <%= image_tag("image_pilot.png", class: "image-tag") %>
+        <%= link_to nft_path(nft) do %>
+          <div class="nft d-flex flex-column">
+            <div class="image">
+              <%= image_tag("image_pilot.png", class: "image-tag") %>
+            </div>
+            <div class="details">
+
+                <div class="item item-name"><strong><%= nft.name %></strong></div>
+              <div class="item description"><%= nft.description %></div>
+              <div class="item price">$<%= nft.price %>/week</div>
+            </div>
           </div>
-          <div class="details">
-            <%= link_to nft_path(nft) do %>
-              <div class="item item-name"><strong><%= nft.name %></strong></div>
-            <% end %>
-            <div class="item description"><%= nft.description %></div>
-            <div class="item price">$<%= nft.price %>/week</div>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -26,7 +27,7 @@
 
     <div class="row">
     <% @nfts.each do |nft| %>
-      <div class="nft d-flex flex-column col-3">
+      <div class="nft d-flex flex-column">
         <div class="image">
           <%= image_tag("image_pilot.png", class: "image-tag") %>
         </div>
