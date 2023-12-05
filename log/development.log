@@ -1,0 +1,67 @@
+Started GET "/" for 127.0.0.1 at 2023-12-05 10:30:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 64.5ms | Allocations: 19570)
+  Rendered layout layouts/application.html.erb (Duration: 4611.2ms | Allocations: 235454)
+Completed 200 OK in 5522ms (Views: 4606.7ms | ActiveRecord: 13.6ms | Allocations: 1215876)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 10:34:26 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2060)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 10947)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 1.0ms | Allocations: 11270)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:00:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 51.2ms | Allocations: 19132)
+  Rendered layout layouts/application.html.erb (Duration: 163.9ms | Allocations: 91077)
+Completed 200 OK in 324ms (Views: 156.9ms | ActiveRecord: 10.7ms | Allocations: 377435)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:00:56 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2060)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 12015)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.7ms | Allocations: 12362)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:01:06 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2038)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 10865)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.8ms | Allocations: 11177)
+
+
