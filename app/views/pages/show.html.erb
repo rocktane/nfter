@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="items">
+    <h1>Hello <%= current_user.email %>, here is you collection</h1>
+  </div>
+
+  <div class="items">
+    <div class="row">
+    <% @nfts.where(user_id: current_user).each do |nft| %>
+      <div class="nft d-flex flex-column col-3">
+        <div class="image">
+          <%= image_tag("image_pilot.png", class: "image-tag") %>
+        </div>
+        <div class="details">
+          <%= link_to nft_path(nft) do %>
+            <div class="item item-name"><strong><%= nft.name %></strong></div>
+          <% end %>
+            <div class="item description"><%= nft.description %></div>
+            <div class="item price">$<%= nft.price %>/week</div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to ('<i class="fa-solid fa-plus"></i>').html_safe, new_nft_path, class: "add-nft" %>
