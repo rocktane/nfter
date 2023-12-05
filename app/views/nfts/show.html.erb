@@ -13,8 +13,16 @@
 <%= link_to 'Back', root_path %>
 
 
+<%# @disabled_start_date = Transaction.all.map {|t| t.begin_date}
+ %>
 
-<input data-controller="datepicker" type="text" id="dateRangePicker" placeholder="Sélectionnez une plage de dates">
+
+
+<%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
+  <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
+  <%= f.submit 'Schedule your reservation' %>
+<% end %>
 
 
 </div>
