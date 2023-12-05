@@ -1,37 +1,29 @@
-.container-session {
+.container-new {
   display: flex;
   justify-content: center;
 }
 
-p {
-  margin: 0;
-}
-
-.items-session {
+.items-new {
   background-color: #ffffff;
   display: flex;
   width: 30em;
   flex-direction: column;
+  justify-self: center;
   border-radius: 15px;
   padding: 4em;
   padding-top: 2em;
   margin-bottom: 4em;
   margin-top: 2em;
-    a {
-      text-decoration: none;
-      color: black;
-      font-weight: light;
-    }
 }
 
-.form-actions > .btn {
+form .btn {
   background-color: aquamarine;
   border-radius: 1em;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-.form-actions > .btn:hover {
+form .btn:hover {
   background-color: rgb(112, 231, 191);
   font-weight: bold;
   border-radius: 1em;
@@ -39,15 +31,11 @@ p {
   padding-right: 1em;
 }
 
-.links {
-  display: flex;
-  width: 90%;
-  align-self: center;
-  text-align: center;
-  justify-content: space-between;
-  margin-top: 2em;
-  flex-direction: row;
-    a:hover {
-      text-decoration: underline;
-    }
+.items-new > p {
+  padding-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+
+.mb-3:first-of-type {
+  margin-top: 1em;
 }

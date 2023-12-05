@@ -1,6 +1,6 @@
 <div class="container">
   <div class="items">
-    <h1>Hello <%= current_user.email %>, here is you collection</h1>
+    <h1>Hello <%= current_user&.username || current_user&.email %></h1>
   </div>
 
   <div class="items">

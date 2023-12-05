@@ -1,19 +1,26 @@
-.footer {
+.footer-content {
   display: flex;
+  margin-top: auto;
   background-color: #ffffff;
   justify-content: center;
   align-items: center;
   height: 10em;
-  position: static;
   width: 100%;
-  bottom: 0;
 }
 
-.footer span {
+.footer-content span {
   background-color: rgb(165, 165, 165);
   color: #f2f1f1;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 3px;
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.filler {
+  height: 55px;
+}
+
+body {
+  min-height: 100dvh;
 }

@@ -10,13 +10,16 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <%#
         <li class="nav-item active me-2">
           <%= link_to "show only available", "#", class: "nav-link" %>
+        <%#
         </li>
         <li>
           <input type="checkbox" id="switch-available" /><label id="label-available" for="switch">Toggle</label>
         </li>
         <div class="separator"></div>
+        %>
         <% if user_signed_in? %>
           <li class="nav-item active me-5">
             <%= link_to "my NFTs", profile_path, class: "nav-link" %>

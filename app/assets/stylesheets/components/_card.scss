@@ -1,6 +1,8 @@
-// body {
-//   font-family: 'Jost', sans-serif;
-// }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .nft {
   width: 100%;
