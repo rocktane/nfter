@@ -1,12 +1,10 @@
 class PagesController < ApplicationController
-  def home
-  end
-
   def show
     if user_signed_in?
     @nfts = Nft.where(user_id: current_user)
-    @transactions = Transaction.all
     @transactions = Transaction.where(nft_id: current_user)
+    else
+      redirect_to new_user_session_path
     end
   end
 

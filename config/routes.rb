@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   patch "validate", to: "transactions#validate"
   patch "refuse", to: "transactions#refuse"
+  get "profile", to: "pages#show"
 end
