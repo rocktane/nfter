@@ -65,3 +65,59 @@ Processing by NftsController#index as HTML
 Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.8ms | Allocations: 11177)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:01:56 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 42.7ms | Allocations: 19132)
+  Rendered layout layouts/application.html.erb (Duration: 166.8ms | Allocations: 91877)
+Completed 200 OK in 332ms (Views: 160.3ms | ActiveRecord: 9.8ms | Allocations: 378249)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:12:00 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 70.2ms | Allocations: 19133)
+  Rendered layout layouts/application.html.erb (Duration: 164.6ms | Allocations: 91673)
+Completed 200 OK in 291ms (Views: 157.6ms | ActiveRecord: 10.8ms | Allocations: 378046)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:16:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.3ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 46.3ms | Allocations: 19133)
+  Rendered layout layouts/application.html.erb (Duration: 129.1ms | Allocations: 91698)
+Completed 200 OK in 243ms (Views: 124.2ms | ActiveRecord: 9.3ms | Allocations: 378070)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 11:17:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:5
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:15
+  Rendered nfts/index.html.erb within layouts/application (Duration: 63.5ms | Allocations: 19133)
+  Rendered layout layouts/application.html.erb (Duration: 145.1ms | Allocations: 92302)
+Completed 200 OK in 269ms (Views: 140.1ms | ActiveRecord: 9.6ms | Allocations: 378674)
+
+
