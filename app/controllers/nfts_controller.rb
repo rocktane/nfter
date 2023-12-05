@@ -13,8 +13,9 @@ class NftsController < ApplicationController
 
   def create
     @nft = Nft.new(nft_params)
-    if @nft.save
-      redirect_to @nft
+    @nft.user = current_user
+    if @nft.save!
+      redirect_to nft_path(@nft)
     else
       render 'new'
     end
@@ -27,7 +28,7 @@ class NftsController < ApplicationController
   def update
     @nft = Nft.find(params[:id])
     if @nft.update(nft_params)
-      redirect_to @nft
+      redirect_to nft_path(@nft)
     else
       render 'edit'
     end
@@ -42,6 +43,6 @@ class NftsController < ApplicationController
   private
 
   def nft_params
-    params.require(:nft).permit(:name, :description, :price, :availibility)
+    params.require(:nft).permit(:name, :description, :price, :availability)
   end
 end

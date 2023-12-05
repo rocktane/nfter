@@ -7,4 +7,14 @@
     <li class="list-group-item">Availability: <%= @nft.availability %></li>
     <li class="list-group-item">ID: <%= @nft.user_id %></li>
   </ul>
+
+<%= link_to 'Delete', nft_path(@nft), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_nft_path(@nft) %>
+<%= link_to 'Back', root_path %>
+
+
+
+<input data-controller="datepicker" type="text" id="dateRangePicker" placeholder="Sélectionnez une plage de dates">
+
+
 </div>
