@@ -25,17 +25,11 @@
   <%= link_to 'Edit', edit_nft_path(@nft) %>
 <% end %>
 
-<input data-controller="datepicker" type="text" id="dateRangePicker" placeholder="Sélectionnez une plage de dates">
-<button name="submit">
-Submit a reservation
-</button>
-</form>
-</div> %>
-<%# pseudo code %>
-<%# je veux ajouter un button submit qui va prendre en compte la dateRangePi %>
-<%# en appuyant sur submit, on va aller chercher le path de transaction create
-et on va redirect vers profile/path qui show les pending transactions %>
-<%# sur profile/path, sur une pending transactions, on va ajouter un boutton validate
-et un boutton refuse, le validate renvoie au pages controller action validate et refuse renvoie sur le pages controller action refuse  %>
+
+<%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
+  <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
+  <%= f.submit 'Schedule your reservation' %>
+<% end %>
 
 </div>

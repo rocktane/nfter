@@ -8,15 +8,15 @@ class PagesController < ApplicationController
     end
   end
 
-  def validate
+  def validate_transaction
     @transaction = Transaction.find(params[:id])
-    @transaction.state = 'validate'
-    redirect_to profile_path(@transaction.nft_id.user_id)
+    @transaction.update(status: "validated")
+    redirect_to pages_show_path
   end
 
-  def refuse
+  def refuse_transaction
     @transaction = Transaction.find(params[:id])
-    @transaction.destroy
-    redirect_to profile_path(@transaction.nft_id.user_id)
+    @transaction.update(status: "refused")
+    redirect_to pages_show_path
   end
 end

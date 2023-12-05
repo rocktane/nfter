@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :transactions
   has_many :nfts
 
-  # validates :username, presence: true
-  # validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :username, uniqueness: true
 end
