@@ -4,9 +4,11 @@
   </div>
 
   <div class="items">
+    <h2 class="title">Tous tes NFTs 🐵</h2>
+
     <div class="row">
-    <% @nfts.where(user_id: current_user).each do |nft| %>
-      <div class="nft d-flex flex-column col-3">
+    <% @nfts.each do |nft| %>
+      <div class="nft d-flex flex-column">
         <div class="image">
           <%= image_tag("image_pilot.png", class: "image-tag") %>
         </div>
@@ -21,6 +23,10 @@
       <% end %>
     </div>
   </div>
+
 </div>
 
-<%= link_to ('<i class="fa-solid fa-plus"></i>').html_safe, new_nft_path, class: "add-nft" %>
+<div class="add-section">
+  <div class="text-add">Ajouter un NFT</div>
+  <%= link_to ('<i class="fa-solid fa-plus"></i>').html_safe, new_nft_path, class: "add-nft" %>
+</div>
