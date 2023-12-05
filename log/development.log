@@ -185,3 +185,223 @@ Processing by NftsController#index as HTML
 Completed 200 OK in 28ms (Views: 20.2ms | ActiveRecord: 7.6ms | Allocations: 13869)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-05 12:07:23 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.9ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:28
+  Rendered nfts/index.html.erb within layouts/application (Duration: 5186.3ms | Allocations: 149821)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 5227.7ms | Allocations: 179863)
+Completed 200 OK in 6290ms (Views: 5221.2ms | ActiveRecord: 14.2ms | Allocations: 1160267)
+
+
+Started GET "/nfts/2" for 127.0.0.1 at 2023-12-05 12:09:38 +0100
+Processing by NftsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mNft Load (0.7ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/show.html.erb within layouts/application
+  Rendered nfts/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 214)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 9324)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 11473)
+
+
+Started GET "/nfts/10" for 127.0.0.1 at 2023-12-05 12:13:37 +0100
+Processing by NftsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mNft Load (0.5ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/show.html.erb within layouts/application
+  Rendered nfts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 17)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 9018)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 0.4ms | Allocations: 9832)
+
+
+Started GET "/" for 127.0.0.1 at 2023-12-05 12:18:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (1.0ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:28
+  Rendered nfts/index.html.erb within layouts/application (Duration: 190.2ms | Allocations: 67190)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 216.4ms | Allocations: 96280)
+Completed 200 OK in 358ms (Views: 208.4ms | ActiveRecord: 12.4ms | Allocations: 382636)
+
+
+Started GET "/profile_path" for 127.0.0.1 at 2023-12-05 12:19:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/profile_path"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-05 12:19:33 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.6ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:28
+  Rendered nfts/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 5475)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 14687)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 1.0ms | Allocations: 14997)
+
+
+Started DELETE "/" for 127.0.0.1 at 2023-12-05 12:19:38 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-05 12:19:38 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:28
+  Rendered nfts/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 5450)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 14339)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.8ms | Allocations: 14639)
+
+
+Started DELETE "/" for 127.0.0.1 at 2023-12-05 12:19:41 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2023-12-05 12:19:41 +0100
+Processing by NftsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/index.html.erb within layouts/application
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts" WHERE "nfts"."availability" = $1[0m  [["availability", true]]
+  ↳ app/views/nfts/index.html.erb:7
+  [1m[36mNft Load (0.4ms)[0m  [1m[34mSELECT "nfts".* FROM "nfts"[0m
+  ↳ app/views/nfts/index.html.erb:28
+  Rendered nfts/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 5207)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 14088)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.7ms | Allocations: 14348)
+
+
+Started GET "/nfts/" for 127.0.0.1 at 2023-12-05 12:20:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/nfts"):
+  
+Started GET "/nfts/new" for 127.0.0.1 at 2023-12-05 12:20:12 +0100
+Processing by NftsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 97.0ms | Allocations: 18678)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 99.2ms | Allocations: 18919)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 105.4ms | Allocations: 28110)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 28488)
+
+
+Started POST "/nfts" for 127.0.0.1 at 2023-12-05 12:20:50 +0100
+Processing by NftsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"", "price"=>"", "availability"=>"1"}, "commit"=>"Create Nft"}
+[31mUnpermitted parameter: :availability. Context: { controller: NftsController, action: create, request: #<ActionDispatch::Request:0x00007f0d6294b3f0>, params: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"", "price"=>"", "availability"=>"1"}, "commit"=>"Create Nft", "controller"=>"nfts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mNft Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "dedefef"], ["description", ""], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 4.5ms | Allocations: 2390)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2501)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 11425)
+Completed 200 OK in 47ms (Views: 13.0ms | ActiveRecord: 12.2ms | Allocations: 20938)
+
+
+Started POST "/nfts" for 127.0.0.1 at 2023-12-05 12:21:09 +0100
+Processing by NftsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft"}
+[31mUnpermitted parameter: :availability. Context: { controller: NftsController, action: create, request: #<ActionDispatch::Request:0x00007f0d62836168>, params: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft", "controller"=>"nfts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mNft Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "dedefef"], ["description", "tgrtgertger"], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 2.1ms | Allocations: 2227)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2288)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 11333)
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 3.1ms | Allocations: 14615)
+
+
+Started POST "/nfts" for 127.0.0.1 at 2023-12-05 12:21:10 +0100
+Processing by NftsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft"}
+[31mUnpermitted parameter: :availability. Context: { controller: NftsController, action: create, request: #<ActionDispatch::Request:0x00007f0d608e8568>, params: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft", "controller"=>"nfts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mNft Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "dedefef"], ["description", "tgrtgertger"], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 3.1ms | Allocations: 2225)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2286)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 11094)
+Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 2.6ms | Allocations: 14293)
+
+
+Started POST "/nfts" for 127.0.0.1 at 2023-12-05 12:21:11 +0100
+Processing by NftsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft"}
+[31mUnpermitted parameter: :availability. Context: { controller: NftsController, action: create, request: #<ActionDispatch::Request:0x00007f0d608699e8>, params: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft", "controller"=>"nfts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mNft Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "dedefef"], ["description", "tgrtgertger"], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 2.5ms | Allocations: 2225)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2286)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 11093)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.9ms | Allocations: 14270)
+
+
+Started POST "/nfts" for 127.0.0.1 at 2023-12-05 12:21:11 +0100
+Processing by NftsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft"}
+[31mUnpermitted parameter: :availability. Context: { controller: NftsController, action: create, request: #<ActionDispatch::Request:0x00007f0d607bb348>, params: {"authenticity_token"=>"[FILTERED]", "nft"=>{"name"=>"dedefef", "description"=>"tgrtgertger", "price"=>"1200", "availability"=>"1"}, "commit"=>"Create Nft", "controller"=>"nfts", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mNft Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "nfts" WHERE "nfts"."name" = $1 AND "nfts"."description" = $2 LIMIT $3[0m  [["name", "dedefef"], ["description", "tgrtgertger"], ["LIMIT", 1]]
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nfts_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering nfts/new.html.erb within layouts/application
+  Rendered nfts/_form.html.erb (Duration: 2.9ms | Allocations: 2224)
+  Rendered nfts/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2285)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 11092)
+Completed 200 OK in 17ms (Views: 11.2ms | ActiveRecord: 1.9ms | Allocations: 14266)
+
+
