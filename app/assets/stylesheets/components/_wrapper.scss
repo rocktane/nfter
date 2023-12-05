@@ -1,0 +1,16 @@
+.items {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  border-radius: 15px;
+  padding: 4em;
+  padding-top: 2em;
+  margin-bottom: 4em;
+  margin-top: 2em;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: light;
+    }
+}

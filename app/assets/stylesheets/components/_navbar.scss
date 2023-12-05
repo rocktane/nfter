@@ -20,13 +20,13 @@
   margin-right: 1em;
 }
 
-input[type=checkbox]{
+.navbar input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
 
-label {
+.navbar label {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 50px;
@@ -38,7 +38,7 @@ label {
   margin-right: 2em;
 }
 
-label:after {
+.navbar label:after {
 	content: '';
 	position: absolute;
 	top: 1.25px;
@@ -50,20 +50,20 @@ label:after {
 	transition: 0.3s;
 }
 
-input:checked + label {
+.navbar input:checked + label {
 	background: #bada55;
 }
 
-input:checked + label:after {
+.navbar input:checked + label:after {
 	left: calc(100% - 1.25px);
 	transform: translateX(-100%);
 }
 
-label:active:after {
+.navbar label:active:after {
 	width: 32.5px;
 }
 
-li {
+.navbar li {
   display: flex;
   align-items: center;
 }

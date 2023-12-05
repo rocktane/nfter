@@ -1,34 +1,28 @@
-body {
-  font-family: 'Jost', sans-serif;
-}
+// body {
+//   font-family: 'Jost', sans-serif;
+// }
 
 .nft {
+  width: 100%;
   border: 1px solid rgb(227, 227, 227);
   border-radius: 10px;
-  margin: 1em;
   padding: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
   justify-content: center;
 }
 
 .title {
   display: inline;
   padding-left: 2em;
-}
-
-.items {
-  background-color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: baseline;
-  border-radius: 15px;
-  padding: 2em;
-  margin-bottom: 4em;
-  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-family: 'Jost', sans-serif;
 }
 
 .image {
@@ -59,6 +53,7 @@ body {
 .price {
   background-color: #4edbae;
   position: absolute;
+  color: white;
   bottom: 1em;
   right: 1em;
   display: inline-block;

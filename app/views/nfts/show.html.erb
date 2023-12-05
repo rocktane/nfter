@@ -1,21 +1,29 @@
 <div class="container">
-  <h1><%= @nft.name %></h1>
+  <div class="items">
+    <div class="two-columns">
+      <div class="column-left">
+        <div class="@nft d-flex flex-column">
+          <div class="image">
+            <%= image_tag("image_pilot.png", class: "image-tag") %>
+          </div>
+        </div>
+      </div>
 
-  <ul class="list-group">
-    <li class="list-group-item">Description: <%= @nft.description %></li>
-    <li class="list-group-item">Price: <%= @nft.price %></li>
-    <li class="list-group-item">Availability: <%= @nft.availability %></li>
-    <li class="list-group-item">ID: <%= @nft.user_id %></li>
-  </ul>
+      <div class="column-right">
+          <div class="details">
+            <div class="item item-name"><strong><%= @nft.name %></strong></div>
+            <div class="item description"><%= @nft.description %></div>
+            <div class="item owner"><%= @nft.user.username %></div>
+            <div class="item show-price">$<%= @nft.price %>/week</div>
+          </div>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Delete', nft_path(@nft), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_nft_path(@nft) %>
-<%= link_to 'Back', root_path %>
-
-
-<%# @disabled_start_date = Transaction.all.map {|t| t.begin_date}
- %>
-
+<% if @nft.user == current_user %>
+  <%= link_to 'Delete', nft_path(@nft), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_nft_path(@nft) %>
+<% end %>
 
 
 <%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
@@ -23,6 +31,5 @@
   <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
   <%= f.submit 'Schedule your reservation' %>
 <% end %>
-
 
 </div>
