@@ -11,19 +11,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-  def validate
-    # pseudo code
-    # je veux trouver le nft de la transaction, et modifier le
-    # params nft.transaction.status en non available,
-    # et supprimer la demande de transaction
-  end
-
-  def refuse
-    # pseudo code
-    # je veux trouver le nft de la transaction,
-    # et supprimer la demande de transaction
-  end
-
    private
 
   def transaction_params
