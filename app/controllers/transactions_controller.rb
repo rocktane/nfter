@@ -13,6 +13,19 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def validate
+    raise
+    @transaction = Transaction.find(params[:id])
+    @transaction.update(status: "validated")
+    redirect_to pages_show_path
+  end
+
+  def refuse
+    @transaction = Transaction.find(params[:id])
+    @transaction.update(status: "refused")
+    redirect_to pages_show_path
+  end
+
   private
 
   def transaction_params

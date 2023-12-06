@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :nfts, only: [:show, :new, :create, :edit, :update, :destroy] do
-    resources :transactions, only: [:create]
+    resources :transactions, only: [:create, :validate, :refuse]
+    # member do
+    #   patch 'validate'
+    #   patch 'refuse'
+    # end
   end
 
-  patch "validate", to: "transactions#validate"
-  patch "refuse", to: "transactions#refuse"
   get "profile", to: "pages#show"
 end
