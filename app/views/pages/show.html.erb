@@ -30,38 +30,3 @@
   <div class="text-add">Ajouter un NFT</div>
   <%= link_to ('<i class="fa-solid fa-plus"></i>').html_safe, new_nft_path, class: "add-nft" %>
 </div>
-
-<div>
-  <h1>Transactions Pending:</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Begin date</th>
-        <th>End date</th>
-        <th>Price</th>
-        <th>Owner</th>
-        <th>NFT</th>
-        <th>Buyer</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @transactions.each do |transaction| %>
-        <tr>
-          <td><%= transaction.begin_date %></td>
-          <td><%= transaction.end_date %></td>
-          <td><%= transaction.price %></td>
-          <td><%= transaction.owner_id %></td>
-          <td><%= transaction.nft_id %></td>
-          <td><%= transaction.buyer_id %></td>
-          <td>
-            <%= link_to 'Accept', accept_transaction_path(transaction), method: :patch %>
-            <%= link_to 'Decline', decline_transaction_path(transaction), method: :patch %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-
-</div>
