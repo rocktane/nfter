@@ -4,7 +4,11 @@
       <div class="column-left">
         <div class="@nft d-flex flex-column">
           <div class="image">
-            <%= image_tag("image_pilot.png", class: "image-tag-show") %>
+              <% if @nft.photo.attached? %>
+                <%= cl_image_tag(@nft.photo.key, class: "image-tag") %>
+              <% else %>
+                <%= image_tag("image_pilot.png", class: "image-tag") %>
+              <% end %>
           </div>
           <div class="buttons">
           <% if @nft.user == current_user %>
@@ -20,7 +24,7 @@
           <div class="item item-name"><strong><%= @nft.name %></strong></div>
           <div class="item full-description"><%= @nft.description %></div>
           <div class="item owner"><%= @nft&.user.username || "anonymous" %></div>
-          <div class="item show-price">$<%= @nft.price %>/week</div>
+          <div class="item show-price">$<%= @nft.price %>/day</div>
         </div>
 
         <% if @nft.user != current_user %>
