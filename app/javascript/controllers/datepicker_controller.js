@@ -29,12 +29,10 @@ export default class extends Controller {
     const endDate = this.begin_atTarget.value.split(" to ")[1]
     // this.end_atTarget.value = endDate
     // this.begin_atTarget.value = startDate
+    this.end_atTarget.value = endDate
     if (this.end_atTarget.value === "undefined") {
       this.end_atTarget.value = startDate
-    } else {
-      this.end_atTarget.value = endDate
     }
       this.begin_atTarget.value = startDate
-
   }
 }
