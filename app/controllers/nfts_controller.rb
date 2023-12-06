@@ -8,7 +8,6 @@ class NftsController < ApplicationController
     @nft = Nft.find(params[:id])
     @transaction = Transaction.new
 
-
     @disabled_dates = Transaction.all.flat_map { |transaction| (transaction.begin_date.to_date..transaction.end_date.to_date).map { |date| date.strftime('%Y-%m-%d') }}
   end
 
