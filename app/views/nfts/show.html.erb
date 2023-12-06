@@ -4,7 +4,11 @@
       <div class="column-left">
         <div class="@nft d-flex flex-column">
           <div class="image">
-            <%= image_tag("image_pilot.png", class: "image-tag-show") %>
+              <% if @nft.photo.attached? %>
+                <%= cl_image_tag(@nft.photo.key, class: "image-tag") %>
+              <% else %>
+                <%= image_tag("image_pilot.png", class: "image-tag") %>
+              <% end %>
           </div>
           <div class="buttons">
           <% if @nft.user == current_user %>
@@ -20,7 +24,7 @@
           <div class="item item-name"><strong><%= @nft.name %></strong></div>
           <div class="item full-description"><%= @nft.description %></div>
           <div class="item owner"><%= @nft&.user.username || "anonymous" %></div>
-          <div class="item show-price">$<%= @nft.price %>/week</div>
+          <div class="item show-price">$<%= @nft.price %>/day</div>
         </div>
 
         <% if @nft.user != current_user %>
@@ -28,11 +32,7 @@
             <div class="items-show">
             <h2 class="title">Book this NFT 🗓️</h2>
               <div class="booking-input">
-              <%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
-                <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
-                <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
-                <%= f.submit 'Book!' %>
-              <% end %>
+                <%= render 'resa_form' %>
               </div>
             </div>
           </div>
@@ -41,15 +41,6 @@
       </div>
     </div>
 
-
-  </div>
-
-  <div class="container-resa">
-    <div class="items-resa">
-      <% if user_signed_in? %>
-        <%= render 'resa_form' %>
-      <% end %>
-    </div>
   </div>
 
 

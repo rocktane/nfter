@@ -11,6 +11,7 @@
   border-radius: 10px;
   padding: 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
 }
 
 .row {
@@ -47,7 +48,6 @@
   padding-bottom: 0;
   height: fit-content;
   flex-grow: 1;
-  position: relative;
 }
 
 .description {
@@ -59,10 +59,10 @@
 
 .price {
   background-color: #4edbae;
-  position: absolute;
   color: white;
-  bottom: 1em;
-  right: 1em;
+  position: absolute;
+  left: 10px;
+  top: 10px;
   display: inline-block;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
