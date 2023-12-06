@@ -7,6 +7,7 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     if @transaction.save!
       redirect_to nft_path(@nft)
+      flash[:notice] = "Your demand has been sent!"
     else
       render "nfts/show"
     end
