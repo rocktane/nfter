@@ -8,7 +8,8 @@
         <%= link_to nft_path(nft) do %>
           <div class="nft d-flex flex-column">
             <div class="image">
-              <%= nft.photo.attached? cl_image_tag(nft.key, class: "image-tag") : asset_path (../assets/images/image_pilot.png) %>
+            <%# nft.photo.attached? cl_image_tag(nft.key, class: "image-tag") :  %>
+              <%= cl_image_tag(nft.key, class: "image-tag") %>
             </div>
             <div class="details">
               <div class="item item-name"><strong><%= nft.name %></strong></div>
