@@ -41,6 +41,15 @@
       </div>
     </div>
 
+
+  </div>
+
+  <div class="container-resa">
+    <div class="items-resa">
+      <% if user_signed_in? %>
+        <%= render 'resa_form' %>
+      <% end %>
+    </div>
   </div>
 
 </div>
