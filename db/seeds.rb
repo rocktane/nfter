@@ -1,6 +1,7 @@
 require 'faker'
 
 puts 'Cleaning database...'
+Transaction.destroy_all
 Nft.destroy_all
 User.destroy_all
 
