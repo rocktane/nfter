@@ -1,29 +1,55 @@
 <div class="container">
   <div class="items">
-    <h1>Hello <%= current_user&.username || current_user&.email %></h1>
+    <h1>Hello <span class="underline--magical"><%= current_user&.username || current_user&.email %></span></h1>
+  </div>
+
+  <div class="items">
+    <div class="colonne">
+      <h2 class="title">My pendings 👋</h2>
+        <div class="transactions">
+          <% @transactions.each do |transaction| %>
+              <div class="transaction">
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+                    <div class="item-tr name"><%= transaction.nft.name %></div>
+                    <div class="item-tr state"><%= transaction.state %></div>
+                    <% b_date = Time.parse(transaction.begin_date.to_s) %>
+                    <% e_date = Time.parse(transaction.end_date.to_s) %>
+                    <div class="item-tr date"><%= b_date.strftime('%d-%m-%Y') %></div>
+                    <div class="item-tr date"><%= e_date.strftime('%d-%m-%Y') %></div>
+                    <div class="action-btns">
+                      <div><i class="fa-solid fa-check"></i></div>
+                      <div><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                </div>
+              </div>
+            </ul>
+          <% end %>
+        </div>
+      </div>
   </div>
 
   <div class="items">
     <h2 class="title">Tous mes NFTs 🐵</h2>
 
     <div class="row">
-    <% @nfts.each do |nft| %>
-      <div class="nft d-flex flex-column">
-        <div class="image">
-          <% if nft.photo.attached? %>
-            <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
-          <% else %>
-            <%= image_tag("image_pilot.png", class: "image-tag") %>
-          <% end %>
-        </div>
-        <div class="details">
-          <%= link_to nft_path(nft) do %>
-            <div class="item item-name"><strong><%= nft.name %></strong></div>
-          <% end %>
-            <div class="item description"><%= nft.description %></div>
-            <div class="item price">$<%= nft.price %>/week</div>
+      <% @nfts.each do |nft| %>
+        <%= link_to nft_path(nft) do %>
+          <div class="nft d-flex flex-column">
+            <div class="image">
+              <% if nft.photo.attached? %>
+                <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
+              <% else %>
+                <%= image_tag("image_pilot.png", class: "image-tag") %>
+              <% end %>
+            </div>
+            <div class="item price">$<%= nft.price %>/day</div>
+            <div class="details">
+              <div class="item item-name"><strong><%= nft.name %></strong></div>
+              <div class="item description"><%= nft.description %></div>
+              <div class="item username"><%= nft.user.username %></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
