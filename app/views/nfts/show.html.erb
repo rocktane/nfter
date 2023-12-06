@@ -28,11 +28,7 @@
             <div class="items-show">
             <h2 class="title">Book this NFT 🗓️</h2>
               <div class="booking-input">
-              <%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
-                <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
-                <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
-                <%= f.submit 'Book!' %>
-              <% end %>
+                <%= render 'resa_form' %>
               </div>
             </div>
           </div>
@@ -41,15 +37,6 @@
       </div>
     </div>
 
-
-  </div>
-
-  <div class="container-resa">
-    <div class="items-resa">
-      <% if user_signed_in? %>
-        <%= render 'resa_form' %>
-      <% end %>
-    </div>
   </div>
 
 </div>

@@ -1,6 +1,5 @@
 .two-columns {
-  display: grid;
-  grid-column-end: auto;
+  display: flex;
 }
 
 .column-right {
@@ -51,6 +50,11 @@
 }
 
 .mb-3 > input {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.mb-3 > textarea {
   background-color: white;
   border-radius: 15px;
 }
