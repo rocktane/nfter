@@ -9,7 +9,7 @@
           <div class="nft d-flex flex-column">
             <div class="image">
               <% if nft.photo.attached? %>
-                <%= cl_image_tag(nft.key, class: "image-tag") %>
+                <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
               <% else %>
                 <%= image_tag("image_pilot.png", class: "image-tag") %>
               <% end %>
@@ -17,7 +17,7 @@
             <div class="details">
               <div class="item item-name"><strong><%= nft.name %></strong></div>
               <div class="item description"><%= nft.description %></div>
-              <div class="item price">$<%= nft.price %>/week</div>
+              <div class="item price">$<%= nft.price %>/day</div>
             </div>
           </div>
         <% end %>
@@ -33,12 +33,16 @@
         <%= link_to nft_path(nft) do %>
           <div class="nft d-flex flex-column">
             <div class="image">
-              <%= image_tag("image_pilot.png", class: "image-tag") %>
+              <% if nft.photo.attached? %>
+                <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
+              <% else %>
+                <%= image_tag("image_pilot.png", class: "image-tag") %>
+              <% end %>
             </div>
+            <div class="item price">$<%= nft.price %>/day</div>
             <div class="details">
               <div class="item item-name"><strong><%= nft.name %></strong></div>
               <div class="item description"><%= nft.description %></div>
-              <div class="item price">$<%= nft.price %>/week</div>
             </div>
           </div>
         <% end %>
