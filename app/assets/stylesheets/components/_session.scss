@@ -12,7 +12,6 @@ p {
   display: flex;
   width: 30em;
   flex-direction: column;
-  justify-content: baseline;
   border-radius: 15px;
   padding: 4em;
   padding-top: 2em;
@@ -25,20 +24,20 @@ p {
     }
 }
 
-.form-actions > .btn {
-  background-color: aquamarine;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-}
+// .form-actions > .btn {
+//   background-color: aquamarine;
+//   border-radius: 1em;
+//   padding-left: 1em;
+//   padding-right: 1em;
+// }
 
-.form-actions > .btn:hover {
-  background-color: rgb(112, 231, 191);
-  font-weight: bold;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-}
+// .form-actions > .btn:hover {
+//   background-color: rgb(112, 231, 191);
+//   font-weight: bold;
+//   border-radius: 1em;
+//   padding-left: 1em;
+//   padding-right: 1em;
+// }
 
 .links {
   display: flex;

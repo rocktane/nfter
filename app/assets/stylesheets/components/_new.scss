@@ -1,0 +1,41 @@
+.container-new {
+  display: flex;
+  justify-content: center;
+}
+
+.items-new {
+  background-color: #ffffff;
+  display: flex;
+  width: 30em;
+  flex-direction: column;
+  justify-self: center;
+  border-radius: 15px;
+  padding: 4em;
+  padding-top: 2em;
+  margin-bottom: 4em;
+  margin-top: 2em;
+}
+
+form .btn {
+  background-color: aquamarine;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+form .btn:hover {
+  background-color: rgb(112, 231, 191);
+  font-weight: bold;
+  border-radius: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.items-new > p {
+  padding-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+
+.mb-3:first-of-type {
+  margin-top: 1em;
+}

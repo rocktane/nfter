@@ -1,7 +1,9 @@
-<div class="container">
-<h1>New NFT</h1>
-<% if user_signed_in? %>
-  <p>You're logged in as ${current_user} %></p>
-<% end %>
-<%= render 'form', nft: @nft %>
+<div class="container-new">
+  <div class="items-new">
+    <h1>New NFT</h1>
+    <% if user_signed_in? %>
+        <p>You're logged in as <strong><%= current_user&.username || current_user&.email %></strong></p>
+    <% end %>
+    <%= render 'form', nft: @nft %>
+  </div>
 </div>
