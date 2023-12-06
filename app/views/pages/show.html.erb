@@ -10,7 +10,11 @@
     <% @nfts.each do |nft| %>
       <div class="nft d-flex flex-column">
         <div class="image">
-          <%= image_tag("image_pilot.png", class: "image-tag") %>
+          <% if nft.photo.attached? %>
+            <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
+          <% else %>
+            <%= image_tag("image_pilot.png", class: "image-tag") %>
+          <% end %>
         </div>
         <div class="details">
           <%= link_to nft_path(nft) do %>
