@@ -1,34 +1,46 @@
 <div class="container">
-  <div class="items">
+  <div class="items-2col">
     <div class="two-columns">
       <div class="column-left">
         <div class="@nft d-flex flex-column">
           <div class="image">
-            <%= image_tag("image_pilot.png", class: "image-tag") %>
+            <%= image_tag("image_pilot.png", class: "image-tag-show") %>
+          </div>
+          <div class="buttons">
+          <% if @nft.user == current_user %>
+            <%= link_to 'Edit', edit_nft_path(@nft), class: "btn" %>
+            <%= link_to 'Delete', nft_path(@nft), class: "btn", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+          <% end %>
           </div>
         </div>
       </div>
 
       <div class="column-right">
-          <div class="details">
-            <div class="item item-name"><strong><%= @nft.name %></strong></div>
-            <div class="item description"><%= @nft.description %></div>
-            <div class="item owner"><%= @nft.user.username %></div>
-            <div class="item show-price">$<%= @nft.price %>/week</div>
+        <div class="details">
+          <div class="item item-name"><strong><%= @nft.name %></strong></div>
+          <div class="item full-description"><%= @nft.description %></div>
+          <div class="item owner"><%= @nft&.user.username || "anonymous" %></div>
+          <div class="item show-price">$<%= @nft.price %>/week</div>
+        </div>
+
+        <% if @nft.user != current_user %>
+          <div class="booking">
+            <div class="items-show">
+            <h2 class="title">Book this NFT 🗓️</h2>
+              <div class="booking-input">
+              <%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
+                <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
+                <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
+                <%= f.submit 'Book!' %>
+              <% end %>
+              </div>
+            </div>
           </div>
+        <% end %>
+
       </div>
     </div>
+
   </div>
-
-<% if @nft.user == current_user %>
-  <%= link_to 'Delete', nft_path(@nft), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_nft_path(@nft) %>
-<% end %>
-
-<%= simple_form_for [@nft, @transaction], data: { controller: 'datepicker' }, html: { class: 'reservation-form' } do |f| %>
-  <%= f.input :begin_date, as: :string, input_html: { data: { datepicker_target: "begin_at", action: "change->datepicker#send"} } %>
-  <%= f.input :end_date, as: :string, input_html: { data: { datepicker_target: "end_at" }} %>
-  <%= f.submit 'Schedule your reservation' %>
-<% end %>
 
 </div>

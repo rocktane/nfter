@@ -1,6 +1,13 @@
 .two-columns {
+  display: grid;
+  grid-column-end: auto;
+}
+
+.column-right {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  align-items: end;
+
 }
 
 .show-price {
@@ -13,4 +20,73 @@
   padding-right: 1em;
   border-radius: 1em;
   font-weight: bold;
+}
+
+.full-description {
+  height: fit-content
+}
+
+.buttons {
+  margin-top: 1em;;
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.image {
+  width: 100%;
+  padding: 0;
+  object-fit: cover;
+}
+
+.image > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.booking-input {
+  width: 50%;
+}
+
+.mb-3 > input {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.items-show > .title {
+  padding: 0;
+}
+
+.items-show {
+  background-color: #f4f4f4;
+  height: fit-content;
+  display: flex;
+  border-radius: 15px;
+  padding: 4em;
+  padding-top: 2em;
+  margin-top: 2em;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: light;
+    }
+}
+
+.items-2col {
+  background-color: #ffffff;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 4em;
+  padding-top: 2em;
+  margin-bottom: 4em;
+  margin-top: 2em;
+
 }
