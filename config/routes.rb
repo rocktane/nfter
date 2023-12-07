@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   resources :nfts, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:create]
   end
-
-  patch "validate", to: "transactions#validate"
-  patch "refuse", to: "transactions#refuse"
   get "profile", to: "pages#show"
+  patch "transactions/:id/validate", to: "transactions#validate", as: "validate"
+  patch "transactions/:id/refuse", to: "transactions#refuse", as: "refuse"
 end
