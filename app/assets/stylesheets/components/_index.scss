@@ -1,4 +1,5 @@
 // Import your components CSS files here.
+@import "body";
 @import "alert";
 @import "avatar";
 @import "form_legend_clear";
@@ -11,7 +12,3 @@
 @import "footer";
 @import "new";
 @import "reservation_form";
-
-body {
-  background-color: #8EAF9D;
-}

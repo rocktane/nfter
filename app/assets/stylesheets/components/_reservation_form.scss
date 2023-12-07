@@ -26,16 +26,29 @@ p {
 }
 
 #resa {
-  background-color: aquamarine;
-  border-radius: 1em;
+  background-color: #95ae9e;
+  font-family: 'Jost', sans-serif;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-align: center;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
+  border-radius: 1em;
+  border: none;
 }
 
-#resa:hover {
-  background-color: rgb(112, 231, 191);
-  font-weight: bold;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+// #resa:hover {
+//   background-color: rgb(112, 231, 191);
+//   border-radius: 1em;
+//   padding-left: 1em;
+//   padding-right: 1em;
+// }
+
+.input-dates {
+  display: flex;
+  justify-content: space-between;
 }
