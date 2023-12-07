@@ -1,11 +1,15 @@
-.footer-content {
+.footer {
   display: flex;
-  margin-top: auto;
+  margin-top: 3em;
   background-color: #ffffff;
   justify-content: center;
   align-items: center;
-  height: 10em;
   width: 100%;
+}
+
+
+.footer {
+  height: 15vh;
 }
 
 .footer-content span {
@@ -18,9 +22,6 @@
 }
 
 .filler {
-  height: 55px;
-}
-
-body {
-  min-height: 100dvh;
+  margin-top: auto;
+  min-height: 55px;
 }

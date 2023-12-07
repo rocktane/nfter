@@ -3,10 +3,10 @@
   <div class="items">
     <h2 class="title">Hottest NFTs 🔥</h2>
 
-    <div class="row">
+    <div class="row-items">
       <% @nfts.where(availability: true).sample(3).each do |nft| %>
         <%= link_to nft_path(nft) do %>
-          <div class="nft d-flex flex-column">
+          <div class="nft">
             <div class="image">
               <% if nft.photo.attached? %>
                 <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
@@ -28,10 +28,10 @@
   <div class="items">
     <h2 class="title">All NFTs 🐵</h2>
 
-    <div class="row">
+    <div class="row-items">
     <% @nfts.each do |nft| %>
         <%= link_to nft_path(nft) do %>
-          <div class="nft d-flex flex-column">
+          <div class="nft">
             <div class="image">
               <% if nft.photo.attached? %>
                 <%= cl_image_tag(nft.photo.key, class: "image-tag") %>

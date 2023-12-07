@@ -1,33 +1,34 @@
-<div class="container">
+
   <div class="items-2col">
     <div class="two-columns">
       <div class="column-left">
-        <div class="@nft d-flex flex-column">
-          <div class="image">
+          <div class="show-image">
               <% if @nft.photo.attached? %>
-                <%= cl_image_tag(@nft.photo.key, class: "image-tag") %>
+                <%= cl_image_tag(@nft.photo.key, class: "show-image-tag") %>
               <% else %>
-                <%= image_tag("image_pilot.png", class: "image-tag") %>
+                <%= image_tag("image_pilot.png", class: "show-image-tag") %>
               <% end %>
           </div>
-          <div class="buttons">
-          <% if @nft.user == current_user %>
-            <%= link_to 'Edit', edit_nft_path(@nft), class: "btn" %>
-            <%= link_to 'Delete', nft_path(@nft), class: "btn", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-          <% end %>
-          </div>
-        </div>
       </div>
 
       <div class="column-right">
-        <div class="details">
+        <div class="show-details">
           <div class="item item-name"><strong><%= @nft.name %></strong></div>
           <div class="item full-description"><%= @nft.description %></div>
-          <div class="item owner"><%= @nft&.user.username || "anonymous" %></div>
-          <div class="item show-price">$<%= @nft.price %>/day</div>
+          <div class="item owner">by <%= @nft&.user.username || "anonymous" %></div>
         </div>
 
-        <% if user_signed_in? && @nft.user != current_user && @nft.status == 'available' %>
+        <div class="item show-price">$<%= @nft.price %>/day</div>
+
+        <div class="buttons">
+          <% if @nft.user == current_user %>
+            <%= link_to 'Edit', edit_nft_path(@nft), class: "button btn-edit" %>
+            <%= link_to 'Delete', nft_path(@nft), class: "button btn-delete", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+          <% end %>
+          </div>
+
+
+        <% if user_signed_in? && @nft.user != current_user && @nft.availability == true %>
           <div class="booking">
             <div class="items-show">
             <h2 class="title">Book this NFT 🗓️</h2>
@@ -42,7 +43,3 @@
     </div>
 
   </div>
-
-
-
-</div>

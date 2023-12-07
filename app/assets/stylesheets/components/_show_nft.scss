@@ -1,57 +1,51 @@
 .two-columns {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .column-right {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  padding-left: 4em;
+}
 
+.column-left {
+  height: fit-content;
 }
 
 .show-price {
-  background-color: #4edbae;
+  background-color: #95ae9e;
+  font-family: 'Jost', sans-serif;
   color: white;
-  display: inline-block;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-align: center;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 1em;
   font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .full-description {
   height: fit-content
 }
 
-.buttons {
-  margin-top: 1em;;
-  display: flex;
-  justify-content: space-around;
-  gap: 1em;
-}
-
-.image {
-  width: 100%;
-  padding: 0;
-  object-fit: cover;
-}
-
-.image > img {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.booking-input {
-  width: 50%;
+.item-name > strong {
+  font-size: 1.4em;
 }
 
 .mb-3 > input {
   background-color: white;
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.booking .mb-3 > input {
+  width: 8em;
 }
 
 .mb-3 > textarea {
@@ -65,12 +59,11 @@
 
 .items-show {
   background-color: #f4f4f4;
+  font-family: 'Jost', sans-serif;
   height: fit-content;
   display: flex;
   border-radius: 15px;
-  padding: 4em;
-  padding-top: 2em;
-  margin-top: 2em;
+  padding: 2.5em;
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
@@ -80,17 +73,45 @@
       color: black;
       font-weight: light;
     }
+    h2 {
+      font-weight: bold;
+    }
 }
 
 .items-2col {
+  width: 90vw;
   background-color: #ffffff;
   height: fit-content;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   border-radius: 15px;
   padding: 4em;
-  padding-top: 2em;
   margin-bottom: 4em;
-  margin-top: 2em;
+  margin-top: 4em;
+}
 
+.show-image {
+  width: 46em;
+  .show-image-tag {
+    border-radius: 1em;
+    width: 100%;
+    }
+}
+
+.show-details {
+  background-color: #f4f4f4;
+  font-family: 'Jost', sans-serif;
+  height: fit-content;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  border-radius: 15px;
+  margin: 0;
+  padding: 1.9em;
+}
+
+#new-transaction {
+  display: flex;
+  justify-content: space-between;
 }

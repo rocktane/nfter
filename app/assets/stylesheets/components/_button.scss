@@ -1,6 +1,6 @@
 .add-nft {
   display: inline-block;
-  background-color: aquamarine;
+  background-color: #8fd3f4;
   font-size: xx-large;
   color: #f4f4f4;
   padding: 1em;
@@ -23,15 +23,39 @@
   visibility: hidden;
 }
 
-.btn {
-  display: inline-block;
-  background-color: aquamarine;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+.buttons {
+  display: flex;
+  gap: 1em;
+  height: fit-content;
+  justify-content: center;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
-.btn:hover {
-  background-color: rgb(112, 231, 191);
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  font-family: 'Jost', sans-serif;
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-align: center;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
   font-weight: bold;
+}
+
+.btn-edit {
+  background-color: #416165;
+}
+
+.btn-delete {
+  background-color: #de6b48;
 }
