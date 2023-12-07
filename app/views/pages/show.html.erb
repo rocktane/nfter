@@ -81,12 +81,12 @@
           <div class="row-dash">
             <% @nfts.each do |nft| %>
               <%= link_to nft_path(nft) do %>
-                <div class="nft d-flex flex-column">
-                  <div class="image">
+                <div class="nft-dash">
+                  <div class="dash-image">
                     <% if nft.photo.attached? %>
-                      <%= cl_image_tag(nft.photo.key, class: "image-tag") %>
+                      <%= cl_image_tag(nft.photo.key, class: "dash-image-tag") %>
                     <% else %>
-                      <%= image_tag("image_pilot.png", class: "image-tag") %>
+                      <%= image_tag("image_pilot.png", class: "dash-image-tag") %>
                     <% end %>
                   </div>
                   <div class="item price">$<%= nft.price %>/day</div>
