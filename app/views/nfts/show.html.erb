@@ -27,7 +27,7 @@
           <div class="item show-price">$<%= @nft.price %>/day</div>
         </div>
 
-        <% if user_signed_in? && @nft.user != current_user %>
+        <% if user_signed_in? && @nft.user != current_user && @nft.status == 'available' %>
           <div class="booking">
             <div class="items-show">
             <h2 class="title">Book this NFT 🗓️</h2>

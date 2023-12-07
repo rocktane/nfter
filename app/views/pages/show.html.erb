@@ -1,19 +1,22 @@
 <div class="container container-dashboard">
 
   <div class="left-column">
-    <h2 class="title">My pendings 👋</h2>
+    <div class="items-transactions">
+      <h2 class="hello">Hello <span class="underline--magical"><%= current_user&.username || current_user&.email %></span> 🚀</h2>
+    </div>
+
+    <div class="items">
+    <h2 class="title">My rented NFTs ⏳</h2>
       <div class="list">
         <% @renteds.each do |rented| %>
           <%= rented.name %>
         <% end %>
       </div>
+    </div>
   </div>
 
   <div class="right-column">
 
-    <div class="items">
-      <h1>Hello <span class="underline--magical"><%= current_user&.username || current_user&.email %></span></h1>
-    </div>
 
     <div class="items-transactions">
         <h2 class="title">My pendings 👋</h2>
@@ -29,10 +32,8 @@
                       <div class="item-tr date">du <%= b_date.strftime('%d-%m-%Y') %></div>
                       <div class="item-tr date">au <%= e_date.strftime('%d-%m-%Y') %></div>
                       <div class="action-btns">
-                        <%#= link_to ('<i class="fa-solid fa-check"></i>').html_safe, validate_path %>
-                        <%#= link_to ('<i class="fa-solid fa-xmark"></i>').html_safe, refuse_path %>
-                        <i class="fa-solid fa-check"></i>
-                        <i class="fa-solid fa-xmark"></i>
+                        <%= link_to ('<i class="fa-solid fa-check"></i>').html_safe, validate_path(transaction), data: { turbo_method: 'patch' } %>
+                        <%= link_to ('<i class="fa-solid fa-xmark"></i>').html_safe, refuse_path(transaction), data: { turbo_method: 'patch' } %>
                       </div>
                     </div>
                   </div>
@@ -44,7 +45,7 @@
     </div>
 
     <div class="items">
-      <h2 class="title">Tous mes NFTs 🐵</h2>
+      <h2 class="title">All my NFTs 🐵</h2>
 
       <div class="row-dash">
         <% @nfts.each do |nft| %>
