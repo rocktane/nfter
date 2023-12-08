@@ -26,7 +26,7 @@ p {
 }
 
 #resa {
-  background-color: #95ae9e;
+  background-color: #8fd3f4;
   font-family: 'Jost', sans-serif;
   color: white;
   font-weight: bolder;
@@ -39,6 +39,9 @@ p {
   padding-right: 1em;
   border-radius: 1em;
   border: none;
+  &:hover {
+    box-shadow: inset 3px 4px 5px #000000;
+  }
 }
 
 // #resa:hover {
@@ -50,5 +53,5 @@ p {
 
 .input-dates {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
 }

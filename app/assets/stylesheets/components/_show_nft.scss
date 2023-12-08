@@ -13,22 +13,38 @@
   height: fit-content;
 }
 
+// .show-price {
+//   background-color: #95ae9e;
+//   font-family: 'Jost', sans-serif;
+//   color: white;
+//   font-weight: bolder;
+//   font-size: 1.4em;
+//   text-align: center;
+//   width: 100%;
+//   padding-top: 1em;
+//   padding-bottom: 1em;
+//   padding-left: 1em;
+//   padding-right: 1em;
+//   border-radius: 1em;
+//   font-weight: bold;
+//   margin-top: 2em;
+//   margin-bottom: 2em;
+// }
+
+
 .show-price {
   background-color: #95ae9e;
-  font-family: 'Jost', sans-serif;
   color: white;
-  font-weight: bolder;
-  font-size: 1.4em;
-  text-align: center;
-  width: 100%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-block;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 1em;
   font-weight: bold;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 .full-description {
@@ -44,6 +60,11 @@
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
+.transaction_begin_date {
+  margin-right: 1em;
+}
+
 .booking .mb-3 > input {
   width: 8em;
 }
@@ -60,6 +81,8 @@
 .items-show {
   background-color: #f4f4f4;
   font-family: 'Jost', sans-serif;
+  border-bottom: 2px solid #d3d3d3;
+  border-right: 2px solid #d3d3d3;
   height: fit-content;
   display: flex;
   border-radius: 15px;
@@ -94,12 +117,16 @@
   width: 46em;
   .show-image-tag {
     border-radius: 1em;
+    border-bottom: 2px solid #9a9a9a;
+    border-right: 2px solid #9a9a9a;
     width: 100%;
     }
 }
 
 .show-details {
   background-color: #f4f4f4;
+  border-bottom: 2px solid #d3d3d3;
+  border-right: 2px solid #d3d3d3;
   font-family: 'Jost', sans-serif;
   height: fit-content;
   font-size: 1.5em;
@@ -108,7 +135,9 @@
   justify-content: baseline;
   border-radius: 15px;
   margin: 0;
+  margin-bottom: 3em;
   padding: 1.9em;
+  position: relative;
 }
 
 #new-transaction {

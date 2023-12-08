@@ -16,9 +16,9 @@
           <div class="item item-name"><strong><%= @nft.name %></strong></div>
           <div class="item full-description"><%= @nft.description %></div>
           <div class="item owner">by <%= @nft&.user.username || "anonymous" %></div>
+        <div class="item show-price">$<%= @nft.price %>/day</div>
         </div>
 
-        <div class="item show-price">$<%= @nft.price %>/day</div>
 
         <div class="buttons">
           <% if @nft.user == current_user %>
