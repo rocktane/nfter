@@ -7,6 +7,7 @@
   background-color: #ffffff;
   display: flex;
   width: 30em;
+  height: fit-content;
   flex-direction: column;
   justify-self: center;
   border-radius: 15px;
@@ -17,18 +18,20 @@
 }
 
 form .btn {
-  background-color: aquamarine;
-  border-radius: 1em;
+  background-color: #95ae9e;
+  color: white;
+  display: inline-block;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
-}
-
-form .btn:hover {
-  background-color: rgb(112, 231, 191);
+  border-radius: 1em;
   font-weight: bold;
-  border-radius: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  &:hover {
+    background-color: #95ae9e;
+    color: white;
+    box-shadow: 3px 4px 5px #000000;
+  }
 }
 
 .items-new > p {
