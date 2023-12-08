@@ -10,12 +10,12 @@
       <div class="list">
         <% @current_transactions.order(:begin_date).each do |transaction| %>
 
-          <% @renteds.each do |rented| %>
-            <%= link_to nft_path(rented) do %>
+
+            <%= link_to nft_path(transaction.nft) do %>
               <div class="nft">
                 <div class="rented-image">
-                  <% if rented.photo.attached? %>
-                    <%= cl_image_tag(rented.photo.key, class: "rented-image-tag") %>
+                  <% if transaction.nft.photo.attached? %>
+                    <%= cl_image_tag(transaction.nft.photo.key, class: "rented-image-tag") %>
                   <% else %>
                     <%= image_tag("image_pilot.png", class: "rented-image-tag") %>
                   <% end %>
@@ -26,14 +26,14 @@
                   <div class="item state pending"><%= transaction.state %></div>
                 <% end %>
                 <div class="details-rented">
-                  <div class="item item-name"><strong><%= rented.name %></strong></div>
+                  <div class="item item-name"><strong><%= transaction.nft.name %></strong></div>
                   <% b_date = Time.parse(transaction.begin_date.to_s) %>
                   <% e_date = Time.parse(transaction.end_date.to_s) %>
                   <div class="item-tr date"><%= b_date.strftime('%B %d') %> until <%= e_date.strftime('%B %d')%></div>
                 </div>
               </div>
             <% end %>
-          <% end %>
+
 
         <% end %>
       </div>
