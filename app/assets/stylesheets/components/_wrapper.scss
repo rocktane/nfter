@@ -158,9 +158,10 @@
 }
 
 .transaction-content {
+  user-select: none;
   font-size: 0.7em;
   color: rgb(233, 233, 233);
-  text-shadow: #FC0 1px 0 10px;
+  text-shadow: rgb(255, 245, 205) 1px 0 10px;
 }
 
 .container-dashboard {
