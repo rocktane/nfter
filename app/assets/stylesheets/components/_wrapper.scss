@@ -1,5 +1,7 @@
 .items {
   background-color: #ffffff;
+  border-bottom: 2px solid #727272;
+  border-right: 2px solid #727272;
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
@@ -7,9 +9,9 @@
   border-radius: 15px;
   padding: 4em;
   padding-top: 2em;
-  padding-bottom: 2em;
+  padding-bottom: 4em;
   margin-bottom: 4em;
-  margin-top: 2em;
+  margin-top: 4em;
     a {
       text-decoration: none;
       color: black;
@@ -31,7 +33,22 @@
 
 .row-dash {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 1em;
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: light;
+      height: fit-content;
+      max-width: 23em;
+      border-radius: 1em;
+      transition: 0.2s ease-in-out;
+      padding: 0;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      }
+    }
 }
 
 .transaction {
@@ -88,7 +105,22 @@
   padding-top: 2em;
   padding-bottom: 4em;
   margin-bottom: 4em;
-  margin-top: 2em;
+  margin-top: 4em;
+}
+
+.items-hello {
+  background-color: #ffffff;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  border-radius: 15px;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 4em;
+  margin-top: 4em;
 }
 
 .right-column {
@@ -135,6 +167,15 @@
   max-width: 285px;
   flex-direction: column;
   gap: 3em;
+  a {
+    max-width: 23em;
+    border-radius: 1em;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+  }
 }
 
 .subtitle-empty {
@@ -147,12 +188,14 @@
   top: 0.5em;
   left: 0.5em;
   border-radius: 1em;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
 }
 
 .validated {
   background-color: #1eee8d;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
 }
 
 .pending {
@@ -182,6 +225,7 @@
 .rented-image-tag {
   max-width: 100%;
   border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 
@@ -192,11 +236,43 @@
   overflow: hidden;
 }
 
-.nft-dash {
-  max-width: 20em;
-  border: 1px solid rgb(227, 227, 227);
-  border-radius: 1em;
-  padding: 0;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  position: relative;
+// .hello {
+//   width: fit-content;
+//   max-width: 285px;
+// }
+
+
+.transaction-card {
+  display: none;
+  border: 1px solid #e3e3e3;
+  border-radius: 0.5em;
+  height: fit-content;
+}
+
+.image-tag-transaction {
+  border-radius: 0.5em;
+  width: 100px;
+}
+
+.transaction-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  margin-right: 1em;
+  justify-content: center;
+}
+
+
+.action-btns-transactions {
+  display: flex;
+  font-size: large;
+  justify-content: space-evenly;
+}
+
+.action-btns-transactions .fa-check {
+  color: #42ff42;
+}
+
+.action-btns-transactions .fa-xmark {
+  color: red;
 }
