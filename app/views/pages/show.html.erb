@@ -65,26 +65,9 @@
                     </div>
                   </div>
               <% end %>
-                <% @transactions.each do |transaction| %>
-                  <div class="transaction-card">
-                    <div class="image-transaction">
-                    <%= cl_image_tag(transaction.nft.photo.key, class: "image-tag-transaction") %>
-                    </div>
-                      <div class="transaction-card-content">
-                        <div class="item-tr name"><strong><%= transaction.nft.name %></strong></div>
-                        <% b_date = Time.parse(transaction.begin_date.to_s) %>
-                        <% e_date = Time.parse(transaction.end_date.to_s) %>
-                        <div class="item-tr date">du <%= b_date.strftime('%d-%m-%Y') %> au <%= e_date.strftime('%d-%m-%Y') %></div>
-                        <div class="action-btns-transactions">
-                          <%= link_to ('<i class="fa-solid fa-circle-check"></i>').html_safe, validate_path(transaction), data: { turbo_method: 'patch' } %>
-                          <%= link_to ('<i class="fa-solid fa-circle-xmark"></i>').html_safe, refuse_path(transaction), data: { turbo_method: 'patch' } %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
             <% end %>
           </div>
+    </div>
 
     <div class="items-transactions">
       <h2 class="title">All my NFTs 🐵</h2>
@@ -113,10 +96,13 @@
           </div>
         <% end %>
     </div>
+
   </div>
+
   <div class="empty"></div>
   <div class="add-section">
     <%= link_to ('<i class="fa-solid fa-plus"></i>').html_safe, new_nft_path, class: "add-nft" %>
     <div class="text-add">Add a NFT</div>
   </div>
+
 </div>
